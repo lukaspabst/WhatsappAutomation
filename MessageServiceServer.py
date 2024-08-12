@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.common import TimeoutException
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import time
@@ -59,7 +60,7 @@ WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, messag
 
 # Enter the message
 message_box = driver.find_element("xpath", message_box_xpath)
-message = "👍"
+message = "xxxx"
 message_box.send_keys(message + Keys.ENTER)  # Send message
 
 # Wait to ensure the message is sent
@@ -71,7 +72,7 @@ last_message_xpath = f"//span[@class='selectable-text invisible-space copyable-t
 # Wait to check if the last sent message appears in the chat
 #try:
 #    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, last_message_xpath)))
-     print("Message sent!")
+#    print("Message sent!")
 #except Exception as e:
 #    print("Message not sent. Error:", e)
 
